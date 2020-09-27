@@ -1,0 +1,470 @@
+// Clases especiales
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+@lilacdark: #1F2233;
+@lilaclight: #24283D;
+@red: #FD5C55;
+@bluelight: #7DCADA;
+@blue: #D1E0EB;
+@bluedark: #0C3C60;
+
+// GENERAL
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    .open-sans;
+}
+
+.navbar-nav a {
+    font-size: 1.8rem;
+}
+
+p {
+    line-height: 1.5;
+    font-size: calc(1.6rem + 0.5vw);
+}
+
+h1 {
+    font-size: calc(2.5rem + 1.5vw);
+    .lato;
+    font-weight: 900;
+    color: @red;
+}
+
+h2 {
+    font-size: calc(2.5rem + 0.5vw);
+    .lato;
+}
+
+h3 {
+    font-size: 2.4rem;
+    .lato;
+}
+
+img {
+    max-width: 100%;
+}
+
+h2.title-h2 {
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        width: calc(5rem + 1vw);
+        height: 0.25rem;
+        bottom: -1rem;
+        left: 0;
+        background-color: #FD5C55;
+    }
+}
+
+// HEADER
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background-color: @lilacdark!important;
+}
+
+// MENÚ NAV
+.navbar {
+    background-color: @lilacdark!important;
+    box-shadow: 0 0 8px #12141d;
+    padding: 3rem;
+    justify-content: space-between;
+    @media (min-width:768px) {
+        display: flex;
+        justify-content: space-around;
+    }
+    p {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        font-weight: 900;
+        span {
+            color: @red;
+        }
+        .lato;
+        @media (min-width: 768px) {
+            font-size: 2.2rem;
+        }
+    }
+    .nav-link {
+        color: white!important;
+        margin-left: 2.5rem;
+        transition: color 0.4s ease 0s;
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:hover {
+            color: @blue!important;
+        }
+    }
+    // Desplegado
+    // Que no se vea el "logo"
+    .navbar-toggler.collapsed {
+        .navbar-brand {
+            opacity: 0;
+        }
+    }
+    
+    button.navbar-toggler  {
+        position: fixed;
+        z-index: 50;
+        left: 85%;
+        border: none;
+    }
+    .collapse {
+        flex-grow: initial;
+    }
+    .collapse.show .navbar-nav {
+        position: fixed;
+        background-color: @lilacdark;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .4s;
+        z-index: 30;
+        a {
+            font-size: 1.8rem;
+            position: relative;
+            padding: 1rem;
+            margin-left: 0;
+            &:after {
+                content: "";
+                width: 20rem;
+                height: 0.2rem;
+                background-color: white;
+                position: absolute;
+                bottom: 0;
+                left: -67%;
+            }
+            &:last-of-type:after {
+                width: 0;
+            }
+        }
+        .nav-link.exp {
+            &:after {
+                left: -44%;
+            }
+        }
+    }
+    .collapsing {
+        position:relative;
+        height:0!important;
+        overflow:hidden;
+    }
+}
+
+
+
+.hero {
+    background-image: url(../img/vinyes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    // Oscurecer el fondo
+    &:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .hero-content {
+        padding: 2rem 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        p {
+            font-size: calc(1.4rem + 0.5vw);
+            color: white;
+        }
+    }
+}
+
+// Sobre mí
+.sobre-mi  {
+    color: white;
+    background-color: @lilacdark;
+    padding-top: 11rem;
+    padding-bottom: 5rem;
+    .container {
+        @media(min-width:1024px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+        }
+    }
+    figure {
+        padding: 1rem;
+        background-color: #1F2233;
+        border-radius: 0.5rem;
+        box-shadow: -3px 1px 10px #00000057;
+        margin-bottom: 3rem;
+        @media(min-width: 768px) {
+            max-width: 50%;
+            margin: 0 auto;
+            margin-bottom: 5rem;
+        }
+        @media(min-width: 1024px) {
+            max-width: 100%;
+        }
+        img {
+            border-radius: 0.2rem;
+        }
+    }
+    p {
+        text-align: justify;
+    }
+    blockquote {
+        margin: 4rem 0;
+        font-style: italic;
+        border: 1px solid @red;
+        padding: 4rem 4rem 4rem 7rem;
+        p {
+            text-align: center;
+            position: relative;
+            &:before {
+                content: '';
+                background-image: url(../img/comilla.svg);
+                width: 4rem;
+                height: 4rem;
+                position: absolute;
+                left: -5rem;
+                top: -2rem;
+            }
+        }
+        footer {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+    }
+    a {
+       font-size: 1.8rem; 
+       color: white;
+       font-weight: 700;
+       border: 1px solid @red;
+       background-color: @red;
+       padding: 1.5rem;
+       border-radius: 3px;
+       transition: 0.4s ease;
+       &:hover {
+           text-decoration: none;
+           background-color: @lilacdark;
+           color: @red;
+       }
+    }
+}
+
+// Apartado estudios
+.estudios {
+    padding: 11rem 0 7rem 0;
+    background-color: @lilaclight;
+    color: white;
+    position: relative;
+    .caja {
+        margin-bottom: 4rem;
+        @media(min-width:768px) {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 13rem;
+        }
+    }
+    .year {
+        background-color: @red;
+        color: white;
+        border: 1px solid @red;
+        display: inline-block;
+        padding: 0.8rem 4rem;
+        border-radius: 3px;
+        font-weight: 700;
+        @media(min-width:768px) {
+            width: max-content;
+            height: 54px;
+            position: relative;
+            &:after {
+                content: '';
+                width: 4rem;
+                height: 4rem;
+                background-color: white;
+                position: absolute;
+                top: 0;
+                right: 0rem;
+                border-radius: 50%;
+                border: 6px solid @red;
+                margin-right: -9rem;
+            }
+        }
+        &.linea-temporal {
+            @media(min-width:768px) {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 1rem;
+                    height: 32rem;
+                    top: -3.8rem;
+                    background-color: #FD5C55;
+                    right: 0;
+                    margin-right: -7.6rem;
+                }
+            }
+        }
+    }
+    .content-caja {
+        border: 1px solid @red;
+        padding: 2rem 0 2rem 2rem;
+        p:last-of-type {
+            font-size: calc(1.6rem + 0.2vw);
+        }
+    }
+}
+
+// Apartado experiencia
+
+.experiencia {
+    background-color: @lilacdark;
+    .content-caja-exp {
+        padding: 2rem;
+    }
+    .caja-exp {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 13rem;
+        text-align: justify;
+        &.caja:last-of-type p:before {
+            height: 16rem;
+        }
+        @media(max-width:767px) {
+            display: flex;
+            flex-direction: column-reverse;
+            .year-exp {
+                width: max-content;
+                color: white;
+                background-color: @red;
+                border-color: @red;
+            }
+        }
+    }
+    .year-exp {
+        background-color: @lilaclight;
+        color: @red;
+        border-color: white;
+    }
+    p {
+        font-size: calc(1.6rem + 0.2vw);
+    }
+    h3 {
+        font-size: calc(1.4rem + 0.4vw);
+        color: @red;
+    }
+    .linea-temporal.linea-exp {
+        &:before {
+            left: 0;
+            margin-left: -7.6rem;
+            background-color: white;
+        }
+        &:after {
+            margin-left: -9rem;
+            left: 0;
+            background-color: @red;
+            border-color: white;
+        }
+    }
+}
+
+// Apartado portfolio
+.portfolio {
+    background-color: @lilaclight;
+    color: white;
+    padding-top: 11rem;
+    padding-bottom: 5rem;
+    .contenido-portolio {
+        img {
+            transition: .4s;
+            position: relative;
+        }
+        a {
+            display: block;
+            margin: 0 0 2rem;
+            position: relative;
+            transition: .4s;
+            &:hover img{
+                content: '';
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.3;
+            }
+            &:hover:after {
+                content: '';
+                position: absolute;
+                background-image: url(../img/lupa.webp);
+                background-repeat: no-repeat;
+                z-index: 2;
+                width: 20rem;
+                height: 20rem;
+                top: 50%;
+                left: 50%;
+
+            }
+        }
+        @media(min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+        }
+    }
+}
+
+.footer {
+    color: white;
+    background-color: @lilacdark;
+    padding: 3rem 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width:768px) {
+            justify-content: space-around;
+        }
+        p {
+            font-weight: 900;
+            span {
+                color: @red;
+            }
+        }
+    }
+    figure img {
+        width: 10rem;
+    }
+}
