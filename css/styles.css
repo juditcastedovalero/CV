@@ -34,6 +34,15 @@ h3 {
 img {
   max-width: 100%;
 }
+ul li {
+  font-size: 15.6px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .experiencia .container,
+  .estudios .container {
+    max-width: 960px!important;
+  }
+}
 h2.title-h2 {
   font-weight: 700;
   margin-bottom: 3rem;
@@ -309,12 +318,24 @@ h2.title-h2:after {
     margin-right: -7.6rem;
   }
 }
+.estudios .year.linea-temporal.special-line:before {
+  height: 67rem;
+}
+@media (max-width: 912px) {
+  .estudios .year.linea-temporal.special-line:before {
+    height: 75rem;
+  }
+}
+.estudios .year.linea-temporal.long-line:before {
+  height: 40rem;
+}
 .estudios .content-caja {
   border: 1px solid #FD5C55;
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem;
 }
-.estudios .content-caja p:last-of-type {
-  font-size: calc(1.6rem + 0.2vw);
+.estudios .content-caja p:last-of-type,
+.estudios .content-caja h4 {
+  font-size: calc(1.6rem + 0.1vw);
 }
 .experiencia {
   background-color: #1F2233;
@@ -322,10 +343,13 @@ h2.title-h2:after {
 .experiencia .content-caja-exp {
   padding: 2rem;
 }
+.experiencia .content-caja-exp h3 {
+  text-transform: uppercase;
+}
 .experiencia .caja-exp {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 13rem;
-  text-align: justify;
+  text-align: left;
 }
 .experiencia .caja-exp.caja:last-of-type p:before {
   height: 16rem;
