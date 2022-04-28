@@ -189,13 +189,13 @@ h2.title-h2:after {
 .sobre-mi {
   color: white;
   background-color: #1F2233;
-  padding-top: 11rem;
+  padding-top: 17rem;
   padding-bottom: 5rem;
 }
 @media (min-width: 1024px) {
   .sobre-mi .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 0.7fr 1fr;
     column-gap: 4rem;
   }
 }
