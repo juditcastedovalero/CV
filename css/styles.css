@@ -327,7 +327,7 @@ h2.title-h2:after {
   }
 }
 .estudios .year.linea-temporal.long-line:before {
-  height: 40rem;
+  height: 55rem;
 }
 .estudios .content-caja {
   border: 1px solid #FD5C55;
@@ -395,17 +395,17 @@ h2.title-h2:after {
   padding-top: 11rem;
   padding-bottom: 5rem;
 }
-.portfolio .contenido-portolio img {
+.portfolio .contenido-portfolio img {
   transition: 0.4s;
   position: relative;
 }
-.portfolio .contenido-portolio a {
+.portfolio .contenido-portfolio a {
   display: block;
   margin: 0 0 2rem;
   position: relative;
   transition: 0.4s;
 }
-.portfolio .contenido-portolio a:hover img {
+.portfolio .contenido-portfolio a:hover img {
   content: '';
   top: 0;
   bottom: 0;
@@ -415,7 +415,7 @@ h2.title-h2:after {
   height: 100%;
   opacity: 0.3;
 }
-.portfolio .contenido-portolio a:hover:after {
+.portfolio .contenido-portfolio a:hover:after {
   content: '';
   position: absolute;
   background-image: url(../img/lupa.webp);
@@ -426,8 +426,11 @@ h2.title-h2:after {
   top: 50%;
   left: 50%;
 }
+.portfolio .contenido-portfolio .resumen {
+  margin-bottom: 3rem;
+}
 @media (min-width: 768px) {
-  .portfolio .contenido-portolio {
+  .portfolio .contenido-portfolio {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
